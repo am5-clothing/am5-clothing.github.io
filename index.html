@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AM5 CLOTHING — Interactive Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <a href="#" class="brand-logo" onclick="backToCollection(event)">
+      <!-- Custom Script AM5 Monogram -->
+      <svg class="am5-monogram" viewBox="0 0 120 75" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 58 C24 38, 34 15, 42 12 C46 10, 44 45, 43 58 M14 40 C26 38, 42 37, 54 37" />
+        <path d="M48 56 C52 38, 58 20, 62 18 C65 17, 66 36, 70 36 C75 36, 82 17, 86 16 C89 15, 86 45, 85 58" />
+        <path d="M98 20 L88 20 L87 34 C93 32, 102 35, 101 45 C100 54, 90 56, 84 52" />
+      </svg>
+      <span class="brand-text">AM5 CLOTHING</span>
+    </a>
+
+    <nav class="nav-links">
+      <button class="nav-btn active" data-filter="all" onclick="filterCategory('all', this)">CLOTHING</button>
+      <button class="nav-btn" data-filter="outerwear" onclick="filterCategory('outerwear', this)">OUTERWEAR</button>
+      <button class="nav-btn" data-filter="essentials" onclick="filterCategory('essentials', this)">ESSENTIALS</button>
+      <button class="nav-btn" onclick="openAboutModal()">ABOUT</button>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="openOrderDrawer()">ORDER (<span id="bagCount">0</span>)</button>
+      <button class="icon-btn" onclick="toggleGridOverview()">INDEX</button>
+    </div>
+  </header>
+
+  <!-- Main Stage: Diagonal Perspective Clothing Rack -->
+  <main id="rackView" class="rack-stage">
+    <div class="index-indicator">
+      <span id="currentIndexDisplay">01</span> / <span id="totalIndexDisplay">08</span>
+    </div>
+
+    <!-- Diagonal Steel Rail -->
+    <div class="steel-rail"></div>
+
+    <!-- Garments Container -->
+    <div id="rackContainer" class="rack-container"></div>
+
+    <!-- Right Editorial Info Panel -->
+    <aside class="editorial-panel">
+      <div class="item-counter" id="panelCounter">01 / 08</div>
+      <h1 class="item-title" id="panelTitle">OXBLOOD WOOL COAT</h1>
+      <div class="divider-line"></div>
+      <p class="item-desc" id="panelDesc">
+        Tailored heavyweight wool overcoat with dropped shoulders and clean concealed placket.
+      </p>
+
+      <div class="specs-grid">
+        <span class="spec-label">MATERIAL</span>
+        <span class="spec-value" id="panelMaterial">80% WOOL, 20% POLYAMIDE</span>
+
+        <span class="spec-label">COLOR</span>
+        <span class="spec-value" id="panelColor">DEEP OXBLOOD</span>
+
+        <span class="spec-label">PRICE</span>
+        <span class="spec-value" id="panelPrice">650 MAD</span>
+
+        <span class="spec-label">SIZE</span>
+        <span class="spec-value">S / M / L</span>
+      </div>
+
+      <button class="view-details-btn" onclick="openDetailView()">
+        VIEW DETAILS <span>↗</span>
+      </button>
+
+      <div class="rack-controls">
+        <button class="arrow-btn" onclick="stepRack(-1)" aria-label="Previous">←</button>
+        <span class="scroll-hint">SCROLL · DRAG · SELECT</span>
+        <button class="arrow-btn" onclick="stepRack(1)" aria-label="Next">→</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- 3-Column Editorial Detail & Lookbook Split View -->
+  <section id="detailView" class="detail-stage hidden">
+    <button class="back-collection-btn" onclick="backToCollection()">
+      BACK TO COLLECTION <span>×</span>
+    </button>
+
+    <div class="detail-grid">
+      <!-- Left: Studio Hanger View -->
+      <div class="detail-left">
+        <div class="studio-backdrop" id="detailGarmentVisual"></div>
+      </div>
+
+      <!-- Center: Specs & Size Selector -->
+      <div class="detail-center">
+        <div class="item-counter" id="detailCounter">01 / 08</div>
+        <h2 class="item-title" id="detailTitle">OXBLOOD WOOL COAT</h2>
+        <div class="divider-line"></div>
+        <p class="item-desc" id="detailDesc"></p>
+
+        <div class="specs-grid">
+          <span class="spec-label">MATERIAL</span>
+          <span class="spec-value" id="detailMaterial"></span>
+
+          <span class="spec-label">COLOR</span>
+          <span class="spec-value" id="detailColor"></span>
+
+          <span class="spec-label">PRICE</span>
+          <span class="spec-value" id="detailPrice"></span>
+        </div>
+
+        <div class="size-selector-group">
+          <span class="spec-label">SELECT SIZE</span>
+          <div class="size-buttons" id="sizeButtons">
+            <button class="size-btn" onclick="selectSize('S', this)">S</button>
+            <button class="size-btn active" onclick="selectSize('M', this)">M</button>
+            <button class="size-btn" onclick="selectSize('L', this)">L</button>
+          </div>
+        </div>
+
+        <button class="primary-order-btn" onclick="addCurrentToOrder()">
+          ORDER PIECE — <span id="detailBtnPrice">650 MAD</span>
+        </button>
+      </div>
+
+      <!-- Right: On Body Lookbook Viewer -->
+      <div class="detail-right">
+        <div class="lookbook-header">
+          <span>ON BODY</span>
+          <span id="lookAngleIndex">01 / 03</span>
+        </div>
+        <div class="lookbook-frame" id="lookbookVisual"></div>
+        <div class="lookbook-angles">
+          <button class="angle-btn active" onclick="setLookAngle(0, this)">01 FRONT</button>
+          <button class="angle-btn" onclick="setLookAngle(1, this)">02 SILHOUETTE</button>
+          <button class="angle-btn" onclick="setLookAngle(2, this)">03 DETAIL</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Index Grid Modal -->
+  <div id="indexOverlay" class="overlay-modal hidden">
+    <div class="overlay-header">
+      <span>AM5 CLOTHING — ARCHIVE INDEX</span>
+      <button class="close-overlay-btn" onclick="toggleGridOverview()">CLOSE ×</button>
+    </div>
+    <div class="archive-grid" id="archiveGrid"></div>
+  </div>
+
+  <!-- About Modal -->
+  <div id="aboutOverlay" class="overlay-modal hidden">
+    <div class="overlay-header">
+      <span>ABOUT AM5 CLOTHING</span>
+      <button class="close-overlay-btn" onclick="openAboutModal()">CLOSE ×</button>
+    </div>
+    <div class="about-content">
+      <h3>CRAFTED IN MOROCCO. DESIGNED FOR TIMELESS SILHOUETTES.</h3>
+      <p>
+        AM5 CLOTHING explores architectural tailoring, rich oxblood tones, and minimal streetwear essentials. Each piece is produced in limited runs with attention to drape, structure, and everyday versatility.
+      </p>
+      <p class="about-meta">SHIPPING ACROSS MOROCCO · CASH ON DELIVERY</p>
+    </div>
+  </div>
+
+  <!-- Slide-Over Order & WhatsApp Drawer -->
+  <div id="drawerBackdrop" class="drawer-backdrop hidden" onclick="closeOrderDrawer()"></div>
+  <aside id="orderDrawer" class="order-drawer">
+    <div class="drawer-header">
+      <span>YOUR ORDER</span>
+      <button class="close-drawer-btn" onclick="closeOrderDrawer()">×</button>
+    </div>
+
+    <div id="orderItemsList" class="order-items-list"></div>
+
+    <form id="checkoutForm" class="checkout-form" onsubmit="submitWhatsAppOrder(event)">
+      <div class="form-group">
+        <label>FULL NAME</label>
+        <input type="text" id="custName" required placeholder="e.g. Youssef Alami" />
+      </div>
+      <div class="form-group">
+        <label>PHONE NUMBER</label>
+        <input type="tel" id="custPhone" required placeholder="e.g. 06 00 00 00 00" />
+      </div>
+      <div class="form-group">
+        <label>CITY</label>
+        <input type="text" id="custCity" required placeholder="e.g. Marrakech, Casablanca..." />
+      </div>
+
+      <div class="order-total-row">
+        <span>TOTAL (COD)</span>
+        <span id="orderTotalPrice">0 MAD</span>
+      </div>
+
+      <button type="submit" class="whatsapp-submit-btn">
+        CONFIRM VIA WHATSAPP ↗
+      </button>
+    </form>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
