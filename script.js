@@ -3,7 +3,7 @@ const products = [
     id: 1,
     title: "Tricot Henley Noir",
     desc: "Tricot Henley en coton - Blanc / Noir",
-    price: 199,
+    price: 179,
     oldPrice: null,
     rating: "4.9",
     image: "images/tricot-noir-2.jpg.HEIC"
@@ -12,7 +12,7 @@ const products = [
     id: 2,
     title: "Tricot Henley Blanc",
     desc: "Tricot Henley en coton - Blanc / Noir",
-    price: 199,
+    price: 179,
     oldPrice: 249,
     rating: "4.9",
     image: "images/tricot-blanc-1.jpg.HEIC"
