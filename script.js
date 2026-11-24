@@ -5,27 +5,27 @@ const products = [
   {
     id: 1,
     code: '01',
-    title: 'OXBLOOD WOOL COAT',
-    category: 'outerwear',
-    material: '80% WOOL, 20% POLYAMIDE',
-    color: 'DEEP OXBLOOD',
-    price: 179,
-    image: 'images/tricot-noir-2.jpg',
-    desc: 'Tailored heavyweight wool overcoat with dropped shoulders and concealed front placket.',
-    garmentColor: '#1E0406',
-    accentColor: '#4E0C0F',
-    type: 'coat'
+    title: 'TRICOT BLANC CLASSIC',
+    category: 'essentials',
+    material: '100% COTON PEIGNÉ',
+    color: 'BLANC CASSÉ',
+    price: 178,
+    image: 'images/trico-blanc-1.jpg',
+    desc: 'Tricot blanc épuré à la coupe soignée, confortable et facile à porter au quotidien.',
+    garmentColor: '#F3EFEA',
+    accentColor: '#DCD5CC',
+    type: 'shirt'
   },
   {
     id: 2,
     code: '02',
-    title: 'PALE CREAM OVERSHIRT',
+    title: 'TRICOT BLANC ÉDITION II',
     category: 'essentials',
-    material: '100% HEAVYWEIGHT COTTON',
-    color: 'OFF-WHITE CREAM',
-    price: 179,
-    image: 'images/tricot-blanc-1.jpg',
-    desc: 'Relaxed architectural overshirt with structured collar and clean curved hem.',
+    material: '100% COTON DOUX',
+    color: 'BLANC NATUREL',
+    price: 178,
+    image: 'images/trico-blanc-2.jpg',
+    desc: 'Pièce légère en maille blanche avec finitions nettes et tombé fluide.',
     garmentColor: '#F3EFEA',
     accentColor: '#DCD5CC',
     type: 'shirt'
@@ -33,86 +33,86 @@ const products = [
   {
     id: 3,
     code: '03',
-    title: 'CHARCOAL UTILITY JACKET',
-    category: 'outerwear',
-    material: '65% COTTON, 35% NYLON',
-    color: 'WASHED CHARCOAL',
-    price: 179,
-    image: 'images/tricot-noir-3.jpg',
-    desc: 'Cropped boxy workwear jacket featuring matte tonal snaps and storm flap.',
-    garmentColor: '#232221',
-    accentColor: '#3A3836',
-    type: 'jacket'
+    title: 'TRICOT NOIR ÉDITION II',
+    category: 'essentials',
+    material: '100% COTON DOUX',
+    color: 'NOIR PROFOND',
+    price: 178,
+    image: 'images/trico-noir-2.jpg',
+    desc: 'Tricot noir minimaliste au rendu structuré, idéal pour un style sobre et moderne.',
+    garmentColor: '#1B1B1B',
+    accentColor: '#343434',
+    type: 'shirt'
   },
   {
     id: 4,
     code: '04',
-    title: 'STONE PLEATED TROUSERS',
+    title: 'TRICOT BLANC STRUCTURÉ',
     category: 'essentials',
-    material: '70% VISCOSE, 30% LINEN',
-    color: 'WARM STONE',
-    price: 179,
-    image: 'images/tricot-blanc-2.jpg',
-    desc: 'Wide-leg double-pleated tailored trousers engineered for fluid drape.',
-    garmentColor: '#CFC8BE',
-    accentColor: '#B5ADA2',
-    type: 'trousers'
+    material: 'COTON MÉLANGE CONFORT',
+    color: 'BLANC PERLE',
+    price: 178,
+    image: 'images/trico-blanc-3.jpg',
+    desc: 'Tricot blanc à tenue soignée offrant un maintien équilibré et une finition propre.',
+    garmentColor: '#F3EFEA',
+    accentColor: '#DCD5CC',
+    type: 'shirt'
   },
   {
     id: 5,
     code: '05',
-    title: 'NOIR DRAPE TRENCH',
-    category: 'outerwear',
-    material: '100% WATER-REPELLENT TWILL',
-    color: 'MATTE BLACK',
-    price: 179,
-    image: 'images/tricot-noir-4.jpg',
-    desc: 'Minimalist full-length trench coat with raglan sleeves and waist tie.',
-    garmentColor: '#141414',
-    accentColor: '#2B2B2B',
-    type: 'coat'
+    title: 'TRICOT NOIR STRUCTURÉ',
+    category: 'essentials',
+    material: 'COTON MÉLANGE CONFORT',
+    color: 'NOIR MAT',
+    price: 178,
+    image: 'images/trico-noir-3.jpg',
+    desc: 'Pièce noire élégante en maille douce avec coupe équilibrée et détails discrets.',
+    garmentColor: '#1B1B1B',
+    accentColor: '#343434',
+    type: 'shirt'
   },
   {
     id: 6,
     code: '06',
-    title: 'BURGUNDY KNIT POLO',
+    title: 'TRICOT BLANC SIGNATURE',
     category: 'essentials',
-    material: '100% MERINO COTTON BLEND',
-    color: 'AM5 OXBLOOD',
-    price: 179,
-    image: 'images/tricot-noir-2.jpg',
-    desc: 'Fine-gauge open-collar knit polo with ribbed cuffs and relaxed torso.',
-    garmentColor: '#580E12',
-    accentColor: '#3B080A',
+    material: '100% COTON PREMIUM',
+    color: 'BLANC CRÈME',
+    price: 178,
+    image: 'images/trico-blanc-4.jpg',
+    desc: 'Tricot blanc signature pensé pour allier simplicité, tenue et confort durable.',
+    garmentColor: '#F3EFEA',
+    accentColor: '#DCD5CC',
     type: 'shirt'
   },
   {
     id: 7,
     code: '07',
-    title: 'ASH CROPPED BOMBER',
-    category: 'outerwear',
-    material: '100% BRUSHED GABARDINE',
-    color: 'TAUPE ASH',
-    price: 179,
-    image: 'images/tricot-blanc-3.jpg',
-    desc: 'Structured minimalist bomber with clean welt pockets and tonal ribbing.',
-    garmentColor: '#7B746D',
-    accentColor: '#5E5852',
-    type: 'jacket'
+    title: 'TRICOT NOIR SIGNATURE',
+    category: 'essentials',
+    material: '100% COTON PREMIUM',
+    color: 'NOIR INTENSE',
+    price: 178,
+    image: 'images/trico-noir-4.jpg',
+    desc: 'Tricot noir signature à la ligne épurée et au toucher doux pour un look affirmé.',
+    garmentColor: '#1B1B1B',
+    accentColor: '#343434',
+    type: 'shirt'
   },
   {
     id: 8,
     code: '08',
-    title: 'ESPRESSO WIDE SLACKS',
+    title: 'TRICOT NOIR ESSENTIEL',
     category: 'essentials',
-    material: '85% WOOL BLEND, 15% ELASTANE',
-    color: 'DARK ESPRESSO',
-    price: 179,
-    image: 'images/tricot-blanc-4.jpg',
-    desc: 'Full-length tailored slacks with sharp front crease and relaxed break.',
-    garmentColor: '#2C211E',
-    accentColor: '#1D1513',
-    type: 'trousers'
+    material: '100% COTON DOUX',
+    color: 'NOIR CHARBON',
+    price: 178,
+    image: 'images/trico-noir-2.jpg',
+    desc: 'Essentiel noir polyvalent conçu pour compléter la collection avec sobriété.',
+    garmentColor: '#1B1B1B',
+    accentColor: '#343434',
+    type: 'shirt'
   }
 ];
 
@@ -123,7 +123,7 @@ let orderBag = [];
 let isDragging = false;
 let startX = 0;
 
-function generateFallbackSVG(item) {
+function generateGarmentSVG(item) {
   const hanger = `
     <path d="M100 12 C100 4, 110 4, 110 12 C110 17, 105 20, 105 24" fill="none" stroke="#D8D2C9" stroke-width="2.2" stroke-linecap="round"/>
     <path d="M62 44 L105 24 L148 44" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round"/>
@@ -165,18 +165,28 @@ function generateFallbackSVG(item) {
     </svg>`;
 }
 
-function generateGarmentSVG(item) {
-  if (!item.image) return generateFallbackSVG(item);
+function setVisualHTML(container, item) {
+  if (!container) return;
+  if (!item.image) {
+    container.innerHTML = generateGarmentSVG(item);
+    return;
+  }
 
-  const fallbackEncoded = encodeURIComponent(generateFallbackSVG(item));
-  return `
+  container.innerHTML = `
     <img
       src="${item.image}"
       alt="${item.title}"
-      style="width: 100%; height: 290px; object-fit: cover; border-radius: 2px; box-shadow: 0 24px 28px rgba(0, 0, 0, 0.55);"
-      onerror="this.outerHTML = decodeURIComponent('${fallbackEncoded}');"
+      class="garment-photo"
+      style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;"
     />
   `;
+
+  const img = container.querySelector('img');
+  if (img) {
+    img.addEventListener('error', () => {
+      container.innerHTML = generateGarmentSVG(item);
+    }, { once: true });
+  }
 }
 
 function renderRack() {
@@ -186,7 +196,7 @@ function renderRack() {
   filteredProducts.forEach((item, idx) => {
     const node = document.createElement('div');
     node.className = 'garment-node';
-    node.innerHTML = generateGarmentSVG(item);
+    setVisualHTML(node, item);
     node.onclick = () => {
       if (idx === activeIndex) {
         openDetailView();
@@ -264,7 +274,7 @@ function openDetailView() {
   document.getElementById('detailColor').textContent = current.color;
   document.getElementById('detailPrice').textContent = `${current.price} MAD`;
   document.getElementById('detailBtnPrice').textContent = `${current.price} MAD`;
-  document.getElementById('detailGarmentVisual').innerHTML = generateGarmentSVG(current);
+  setVisualHTML(document.getElementById('detailGarmentVisual'), current);
 
   setLookAngle(0, document.querySelector('.angle-btn'));
 }
@@ -288,10 +298,11 @@ function setLookAngle(angleIdx, btn) {
   const current = filteredProducts[activeIndex];
   const scales = ['scale(1)', 'scale(1.15) translateY(-10px)', 'scale(1.45) translateY(25px)'];
   document.getElementById('lookAngleIndex').textContent = `0${angleIdx + 1} / 03`;
-  document.getElementById('lookbookVisual').innerHTML = `
-    <div style="transform: ${scales[angleIdx]}; transition: transform 0.35s ease; width: 170px;">
-      ${generateGarmentSVG(current)}
-    </div>`;
+  const lookbookEl = document.getElementById('lookbookVisual');
+  lookbookEl.innerHTML = `
+    <div class="look-scale" style="transform: ${scales[angleIdx]}; transition: transform 0.35s ease; width: 170px;"></div>
+  `;
+  setVisualHTML(lookbookEl.querySelector('.look-scale'), current);
 }
 
 function addCurrentToOrder() {
@@ -371,10 +382,11 @@ function toggleGridOverview() {
       const card = document.createElement('div');
       card.className = 'archive-card';
       card.innerHTML = `
-        ${generateGarmentSVG(item)}
+        <div class="archive-thumb"></div>
         <h4>${item.title}</h4>
         <span>${item.price} MAD</span>
       `;
+      setVisualHTML(card.querySelector('.archive-thumb'), item);
       card.onclick = () => {
         filteredProducts = [...products];
         activeIndex = idx;
